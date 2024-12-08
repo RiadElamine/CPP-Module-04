@@ -6,7 +6,7 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 01:02:12 by relamine          #+#    #+#             */
-/*   Updated: 2024/11/28 18:32:30 by relamine         ###   ########.fr       */
+/*   Updated: 2024/12/08 00:26:50 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <iostream>
 #include "ICharacter.hpp"
 
-// note : check if you need copy assignment operator and copy constructor
+class ICharacter;
+
 class AMateria
 {
 	protected:

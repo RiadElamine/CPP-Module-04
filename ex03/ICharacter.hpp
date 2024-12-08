@@ -6,12 +6,13 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:28:37 by relamine          #+#    #+#             */
-/*   Updated: 2024/11/28 20:21:12 by relamine         ###   ########.fr       */
+/*   Updated: 2024/12/03 16:33:40 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "AMateria.hpp"
+class AMateria;
 
 class ICharacter
 {

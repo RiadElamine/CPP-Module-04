@@ -6,7 +6,7 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 17:00:27 by relamine          #+#    #+#             */
-/*   Updated: 2024/11/28 22:19:14 by relamine         ###   ########.fr       */
+/*   Updated: 2024/12/08 04:45:42 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,17 @@ class Character : public ICharacter
 {
 	private:
 		std::string Name;
-	public:
 		AMateria *slots[4];
+	public:
 		Character(std::string Name);
 		Character(Character &c);
 		Character& operator=(const Character& c);
-		~Character() {}
+		~Character();
 		std::string const & getName() const;
 		void equip(AMateria* m);
 		void unequip(int idx);
-		void use(int idx, Character& target);
+		void use(int idx, ICharacter& target);
 		void clean_up();
+		AMateria *getMateria(int index) const;
 };
 

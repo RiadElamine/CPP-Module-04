@@ -6,7 +6,6 @@ SOURCE = main.cpp \
 		Cure.cpp \
 		Ice.cpp \
 		MateriaSource.cpp \
-		IMateriaSource.cpp
 
 OBJECT = $(SOURCE:.cpp=.o)
 

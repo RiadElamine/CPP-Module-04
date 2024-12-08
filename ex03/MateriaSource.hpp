@@ -6,7 +6,7 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:49:35 by relamine          #+#    #+#             */
-/*   Updated: 2024/11/28 16:57:23 by relamine         ###   ########.fr       */
+/*   Updated: 2024/12/08 02:54:03 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ class MateriaSource : public IMateriaSource
 		~MateriaSource();
 		void learnMateria(AMateria*);
 		AMateria* createMateria(std::string const & type);
+		void clean_up();
 };
