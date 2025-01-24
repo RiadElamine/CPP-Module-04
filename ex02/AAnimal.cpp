@@ -6,7 +6,7 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 23:41:58 by relamine          #+#    #+#             */
-/*   Updated: 2024/11/23 23:43:51 by relamine         ###   ########.fr       */
+/*   Updated: 2025/01/24 22:09:29 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,6 @@ AAnimal::AAnimal()
 {
 	this->type = "AAnimal";
 	std::cout << "Default constructor of AAnimal called" << std::endl;
-}
-
-AAnimal::AAnimal(const AAnimal& f)
-{
-	std::cout << "Copy constructor of AAnimal called" << std::endl;
-	*this = f;
-}
-
-AAnimal& AAnimal::operator=(const AAnimal& f)
-{
-	std::cout << "Copy assignment operator of AAnimal called" << std::endl;
-	this->type = f.type;
-	return (*this);
 }
 
 AAnimal::~AAnimal()

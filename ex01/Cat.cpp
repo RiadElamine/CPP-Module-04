@@ -6,7 +6,7 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:13:59 by relamine          #+#    #+#             */
-/*   Updated: 2024/11/23 23:15:02 by relamine         ###   ########.fr       */
+/*   Updated: 2025/01/24 21:44:31 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,13 @@ Cat::Cat()
 Cat::Cat(const Cat& f)
 {
 	std::cout << "Copy constructor of Cat called" << std::endl;
-	*this = f;
+	if (this != &f)
+	{
+		this->type = f.type;
+		this->b = new Brain(*f.b);
+		if (this->b == NULL)
+			exit(1);
+	}
 }
 
 Cat& Cat::operator=(const Cat& f)
@@ -33,6 +39,7 @@ Cat& Cat::operator=(const Cat& f)
 	if (this != &f)
 	{
 		this->type = f.type;
+		delete b;
 		this->b = new Brain(*f.b);
 		if (this->b == NULL)
 			exit(1);

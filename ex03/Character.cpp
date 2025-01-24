@@ -6,7 +6,7 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 17:00:07 by relamine          #+#    #+#             */
-/*   Updated: 2024/12/08 04:45:50 by relamine         ###   ########.fr       */
+/*   Updated: 2025/01/24 21:57:57 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ Character::Character(Character &c)
 }
 Character& Character::operator=(const Character& c)
 {
+	if (this == &c)
+		return (*this);
 	clean_up();
 	this->Name = c.getName();
 	for (int i = 0; i < 4; i++)
@@ -82,6 +84,9 @@ void Character::unequip(int idx)
 		return ((void)0);
 	if (slots[idx] == NULL)
 		return ((void)0);
+	if (stor_slots[idx])
+		delete stor_slots[idx];
+	stor_slots[idx] = slots[idx];
 	slots[idx] = NULL;
 }
 void Character::use(int idx, ICharacter& target)
@@ -101,6 +106,11 @@ void Character::clean_up()
 		{
 			delete (this->slots[i]);
 			this->slots[i] = NULL;
+		}
+		if (this->stor_slots[i])
+		{
+			delete (this->stor_slots[i]);
+			this->stor_slots[i] = NULL;
 		}
 	}
 }

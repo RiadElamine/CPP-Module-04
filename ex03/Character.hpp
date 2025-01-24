@@ -6,7 +6,7 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 17:00:27 by relamine          #+#    #+#             */
-/*   Updated: 2024/12/08 04:45:42 by relamine         ###   ########.fr       */
+/*   Updated: 2025/01/24 21:48:17 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ class Character : public ICharacter
 	private:
 		std::string Name;
 		AMateria *slots[4];
+		AMateria *stor_slots[4];
 	public:
 		Character(std::string Name);
 		Character(Character &c);
