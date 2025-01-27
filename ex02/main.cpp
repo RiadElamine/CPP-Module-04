@@ -6,7 +6,7 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 17:36:19 by relamine          #+#    #+#             */
-/*   Updated: 2024/11/23 23:45:18 by relamine         ###   ########.fr       */
+/*   Updated: 2025/01/25 19:10:17 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main()
 {
-	const AAnimal *j[6] ;
+	const AAnimal *j[4] ;
 
 	for (int i = 0; i < 4; i++)
 	{
@@ -35,9 +35,9 @@ int main()
 	
 	std::cout << "------------Test deep copies--------------" <<  std::endl;
 	Cat a;
-	std::cout << "-----" <<  std::endl;
-	Cat a2(a);
-
+	{
+		Cat b = a;
+	}
 
 	return (0);
 }

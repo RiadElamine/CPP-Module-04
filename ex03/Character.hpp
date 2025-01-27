@@ -6,7 +6,7 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 17:00:27 by relamine          #+#    #+#             */
-/*   Updated: 2025/01/24 21:48:17 by relamine         ###   ########.fr       */
+/*   Updated: 2025/01/27 13:06:44 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,3 @@ class Character : public ICharacter
 		void clean_up();
 		AMateria *getMateria(int index) const;
 };
-

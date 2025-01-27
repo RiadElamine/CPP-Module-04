@@ -1,4 +1,4 @@
-NAME = Abstract
+NAME = Interface
 
 SOURCE = main.cpp \
 		AMateria.cpp \

@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/relamine/Desktop/CPP-Module-04/ex00",
-      "program": "/Users/relamine/Desktop/CPP-Module-04/ex00/build/Debug/outDebug"
+      "cwd": "/Users/relamine/Desktop/CPP-Module-04/ex03",
+      "program": "/Users/relamine/Desktop/CPP-Module-04/ex03/build/Debug/outDebug"
     }
   ]
 }

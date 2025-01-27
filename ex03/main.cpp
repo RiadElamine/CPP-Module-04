@@ -6,7 +6,7 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 00:25:37 by relamine          #+#    #+#             */
-/*   Updated: 2024/12/08 04:45:37 by relamine         ###   ########.fr       */
+/*   Updated: 2025/01/27 13:32:07 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,8 @@
 #include "Cure.hpp"
 #include "Ice.hpp"
 
-void f()
-{
-	system("leaks Abstract");
-}
 int main()
 {
-	atexit(f);
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -49,22 +44,19 @@ int main()
 
 
 	//  must not segfaul
-	// deep copy assignment operator
+	//deep copy assignment operator
 	Character reda("reda");
 	{
 		//  must not segfaul
 		//deep copy constructor Charater
 		Character riad("riad");
-		std::cout << "- real " << riad.getName() << std::endl;
-		tmp = src->createMateria("cure");
-		riad.equip(tmp);
 		
 		Character newRiad(riad);
 		std::cout << "- " << newRiad.getName() << std::endl;
 		
 		reda = newRiad;	
 	}
-	std::cout << "copy assignment operator" << reda.getName() << std::endl;
+	std::cout << "copy assignment operator " << reda.getName() << std::endl;
 	reda.use(0, *bob);
 
 

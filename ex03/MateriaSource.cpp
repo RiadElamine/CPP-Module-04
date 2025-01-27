@@ -6,7 +6,7 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:49:38 by relamine          #+#    #+#             */
-/*   Updated: 2024/12/08 04:26:00 by relamine         ###   ########.fr       */
+/*   Updated: 2025/01/27 13:22:09 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 			return (this->Materias[i]->clone());
 		}
 	}
-	return (0);
+	return (NULL);
 }
 
 void MateriaSource::clean_up()

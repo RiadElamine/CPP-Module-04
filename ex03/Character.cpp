@@ -6,7 +6,7 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 17:00:07 by relamine          #+#    #+#             */
-/*   Updated: 2025/01/24 21:57:57 by relamine         ###   ########.fr       */
+/*   Updated: 2025/01/27 13:16:48 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ Character::Character(std::string Name)
 	this->Name = Name;
 	for (int i = 0; i < 4; i++)
 		this->slots[i] = NULL;
+	for (int i = 0; i < 4; i++)
+		this->stor_slots[i] = NULL;
 }
 
 
@@ -26,6 +28,10 @@ Character::~Character()
 }
 Character::Character(Character &c)
 {
+	if (this == &c)
+		return ;
+	for (int i = 0; i < 4; i++)
+		this->stor_slots[i] = NULL;
 	this->Name = c.getName();
 	for (int i = 0; i < 4; i++)
 	{
@@ -49,6 +55,8 @@ Character& Character::operator=(const Character& c)
 	{
         if (c.getMateria(i))
         {
+			if (this->slots[i])
+				delete this->slots[i];
             this->slots[i] = c.getMateria(i)->clone();
         }
         else
