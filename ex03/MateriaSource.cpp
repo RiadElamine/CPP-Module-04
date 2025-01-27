@@ -6,14 +6,43 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:49:38 by relamine          #+#    #+#             */
-/*   Updated: 2025/01/27 13:22:09 by relamine         ###   ########.fr       */
+/*   Updated: 2025/01/27 16:52:15 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource(){}
-
+MateriaSource::MateriaSource()
+{
+	for (int i = 0; i < 4; i++)
+	{
+		this->Materias[i] = NULL;
+	}
+}
+MateriaSource::MateriaSource(MateriaSource &c)
+{
+	if (this == &c)
+		return ;
+	for (int i = 0; i < 4; i++)
+	{
+		if (c.getMateria(i))
+			this->Materias[i] = c.getMateria(i)->clone();
+		else
+			this->Materias[i] = NULL;
+	}
+}
+MateriaSource& MateriaSource::operator=(const MateriaSource& c)
+{
+	if (this == &c)
+		return (*this);
+	clean_up();
+	for (int i = 0; i < 4; i++)
+	{
+		if (c.getMateria(i))
+			this->Materias[i] = c.getMateria(i)->clone();
+	}
+	return (*this);
+}
 MateriaSource::~MateriaSource()
 {
 	clean_up();
@@ -54,4 +83,8 @@ void MateriaSource::clean_up()
 			this->Materias[i] = NULL;
 		}
 	}
+}
+AMateria *MateriaSource::getMateria(int index) const
+{
+	return (this->Materias[index]);
 }

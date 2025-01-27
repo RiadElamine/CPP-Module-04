@@ -6,7 +6,7 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 17:00:07 by relamine          #+#    #+#             */
-/*   Updated: 2025/01/27 13:16:48 by relamine         ###   ########.fr       */
+/*   Updated: 2025/01/27 16:53:47 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,7 @@ Character& Character::operator=(const Character& c)
 	for (int i = 0; i < 4; i++)
 	{
         if (c.getMateria(i))
-        {
-			if (this->slots[i])
-				delete this->slots[i];
             this->slots[i] = c.getMateria(i)->clone();
-        }
-        else
-        {
-            this->slots[i] = NULL; 
-        }
 	}
 	return (*this);
 }
