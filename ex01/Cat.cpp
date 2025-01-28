@@ -6,7 +6,7 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:13:59 by relamine          #+#    #+#             */
-/*   Updated: 2025/01/25 17:33:45 by relamine         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:28:55 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Cat::Cat()
 {
 	std::cout << "Default constructor of Cat called" << std::endl;
 	this->type = "Cat";
-	this->b = new Brain();
+	this->b = new  (std::nothrow) Brain();
 	if (this->b == NULL)
 		exit(1);
 }
@@ -27,7 +27,7 @@ Cat::Cat(const Cat& f)
 	if (this != &f)
 	{
 		this->type = f.type;
-		this->b = new Brain(*f.b);
+		this->b = new (std::nothrow) Brain(*f.b);
 		if (this->b == NULL)
 			exit(1);
 	}
@@ -40,7 +40,7 @@ Cat& Cat::operator=(const Cat& f)
 	{
 		this->type = f.type;
 		delete b;
-		this->b = new Brain(*f.b);
+		this->b = new (std::nothrow) Brain(*f.b);
 		if (this->b == NULL)
 			exit(1);
 	}

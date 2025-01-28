@@ -6,7 +6,7 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 14:57:03 by relamine          #+#    #+#             */
-/*   Updated: 2024/11/28 18:38:19 by relamine         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:30:39 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Ice& Ice::operator=(const Ice& c)
 
 AMateria* Ice::clone() const
 {
-	AMateria* New_Ice = new Ice;
+	AMateria* New_Ice = new (std::nothrow)  Ice;
 	if (!New_Ice)
 		exit(1);
 	return (New_Ice);

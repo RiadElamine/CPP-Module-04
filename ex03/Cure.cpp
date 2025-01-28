@@ -6,7 +6,7 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 14:56:57 by relamine          #+#    #+#             */
-/*   Updated: 2024/11/28 18:36:53 by relamine         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:30:13 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Cure& Cure::operator=(const Cure& c)
 
 AMateria* Cure::clone() const
 {
-	AMateria* New_Cure = new Cure;
+	AMateria* New_Cure = new (std::nothrow) Cure;
 	if (!New_Cure)
 		exit(1);
 	return (New_Cure);

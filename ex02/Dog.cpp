@@ -6,7 +6,7 @@
 /*   By: relamine <relamine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:13:53 by relamine          #+#    #+#             */
-/*   Updated: 2025/01/24 21:46:32 by relamine         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:29:58 by relamine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Dog::Dog()
 {
 	std::cout << "Default constructor of Dog called" << std::endl;
 	this->type = "Dog";
-	this->b = new Brain();
+	this->b = new (std::nothrow) Brain();
 	if (this->b == NULL)
 		exit(1);
 }
@@ -27,7 +27,7 @@ Dog::Dog(const Dog& f)
 	if (this != &f)
 	{
 		this->type = f.type;
-		this->b = new Brain(*f.b);
+		this->b = new (std::nothrow) Brain(*f.b);
 		if (this->b == NULL)
 			exit(1);
 	}
@@ -40,7 +40,7 @@ Dog& Dog::operator=(const Dog& f)
 	{
 		this->type = f.type;
 		delete b;
-		this->b = new Brain(*f.b);
+		this->b = new (std::nothrow) Brain(*f.b);
 		if (this->b == NULL)
 			exit(1);
 	}
